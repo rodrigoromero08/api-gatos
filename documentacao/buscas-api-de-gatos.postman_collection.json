@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "f0101c10-d1f4-4ca9-a98f-d50c59865a0a",
+		"name": "buscas-api-de-gatos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8088/api/cats/mala",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/api/cats/mala",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"cats",
+						"mala"
+					]
+				},
+				"description": "Busca pelo ID da raça"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8088/api/cats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/api/cats",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"cats"
+					]
+				},
+				"description": "busca geral de raças"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8088/api/cats/temperament/Trainable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/api/cats/temperament/Trainable",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"cats",
+						"temperament",
+						"Trainable"
+					]
+				},
+				"description": "Busca de raças por temperamento"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8088/api/cats/origin/Thailand",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/api/cats/origin/Thailand",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"cats",
+						"origin",
+						"Thailand"
+					]
+				},
+				"description": "busca raças pela origem"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,45 @@
+version: '3.4'
+services:
+   job-api-gatos:
+      image: rodrigoromero/job-api-gatos:1.0.0
+      container_name: job-api-gatos
+      ports:
+        - "8380:8380" 
+      networks:
+        - devops-api-cat
+      depends_on:
+        - rabbitmq
+   api-busca-gatos:
+      image: rodrigoromero/api-busca-gatos:1.0.0
+      container_name: api-busca-gatos
+      ports:
+        - "8088:8088"
+      networks:
+        - devops-api-cat
+      depends_on:
+        - rabbitmq
+        - mongodb
+   rabbitmq:
+      image: rabbitmq:3-management
+      container_name: rabbit
+      ports:
+        - "8085:15672" 
+        - "5672:5672/tcp"
+      networks:
+        - devops-api-cat
+   mongodb:
+       image: tutum/mongodb
+       container_name: mongo-cat-db
+       ports:
+         - "27017:27017"
+         - "28017:28017"
+       environment:
+          MONGODB_PASS: "cat"
+          MONGODB_DATABASE: "catdb"
+          MONGODB_USER: "cat"
+       networks:
+         - devops-api-cat
+   
+networks:
+  devops-api-cat:
+    driver: bridge
